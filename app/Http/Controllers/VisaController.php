@@ -48,16 +48,16 @@ class VisaController extends Controller
      */
     public function store(VisaApplicantRequest $request)
     {
-        $visaData = $request->only('name', 'email', 'phoneNumber', 'travelDate', 'description');
-
-        Mail::send('emails.visaApplicantInfo', $visaData, function ($message) use ($visaData) {
-            $message->subject('New Visa Application')
-                    ->from('thetanzanian.tansao@gmail.com', 'TanSAO Notifications')
-                    ->to(config('visaApplications'))
-                    ->replyTo($visaData['email']);
-        });
-
-        $visa = new visa($request->all());
+//        $visaData = $request->only('name', 'email', 'phoneNumber', 'travelDate', 'description');
+//
+//        Mail::send('emails.visaApplicantInfo', $visaData, function ($message) use ($visaData) {
+//            $message->subject('New Visa Application')
+//                    ->from('thetanzanian.tansao@gmail.com', 'TanSAO Notifications')
+//                    ->to(config('visaApplications'))
+//                    ->replyTo($visaData['email']);
+//        });
+//
+//        $visa = new visa($request->all());
 
         //$visa->save();
 
