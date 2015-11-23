@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: TanSAO
+        psr4_prefix: TanSAO
+        src_path: app

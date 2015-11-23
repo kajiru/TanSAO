@@ -1,0 +1,26 @@
+@import "bootstrap/bootstrap";
+
+@btn-font-weight: 300;
+@font-family-sans-serif:Helvetica, Arial, sans-serif;
+
+html{
+  overflow-x: hidden;
+}
+body, label, .checkbox label {
+  font-weight: 300;
+}
+
+//Hides All buttons when Printing
+@media print {
+  button .fa{
+    visibility: hidden;
+  }
+}
+
+//Makes sure that all Panels are of the same height
+#admin-main-panel{
+  height: 300px;
+  overflow-y: auto;
+}
+
+//@import "others/dataTables.bootstrap.less";
