@@ -16,19 +16,8 @@ class VerifyAdmin
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::check()){
-
-            if(Auth::user()->status != 0){
-                return redirect('/');
-            }
-
-            return $next($request);
-
-        }else{
-
-            return redirect("/auth/login");
-
-        }
+        return $request->url();
+        return $next();
 
     }
 

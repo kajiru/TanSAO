@@ -9,6 +9,7 @@ use TanSAO\Http\Controllers\Controller;
 use TanSAO\testDate;
 
 use Auth;
+use Storage;
 
 class TestDatesController extends Controller
 {
@@ -33,22 +34,28 @@ class TestDatesController extends Controller
     }
 
     /**
-     * Save a newly added Test Date.
+     * Saves a newly added Test Dates FIle.
      *
      * @return Response
      */
     public function store(Request $request)
     {
 
-        $testDate = new TestDate($request->all());
 
-        $addedTestDate = Auth::user()->testDates()->save($testDate);
+        //Save actual TestDates File
+        $startDate = str_replace("/",".", $request->input('startDate'));
+        $endDate = str_replace("/",".", $request->input('endDate'));
+        $fileName = $startDate."-to-".$endDate."--TestDates";
+        $request->file('tDates')->move(storage_path().'/app/testDatesFiles', $fileName.".pdf");
 
-        flash()->success($addedTestDate->testName." has been successfully added!");
-
+        //Save info related to testDates file
+        $testDatesFile = "testDatesFiles.txt";
+        Storage::append($testDatesFile,$fileName);
+        flash()->success("File with test dates from ".$startDate." to ".$endDate." has been added!");
         return redirect('/admin');
 
     }
+
 
     /**
      * Display the specified resource.

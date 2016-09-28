@@ -39,38 +39,8 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="list-unstyled">  <a href="/admin/students">Manage Students</a>  </li>
                 <li class="list-unstyled">  <a href="#" class="list-unstyled" data-toggle="modal" data-target="#costCalc"> Cost Calculator </a> </li>
-                <li class="list-unstyled">  <a href="/payments">Payments</a> </li>
-                <li class="list-unstyled">  <a href="/visa">Online Visa Applicants</a> </li>
             </ul>
-
-            <ul class="nav navbar-nav navbar-right">
-                @if (Auth::guest())
-
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Guest <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-
-                            <li><a href="{{ url('/auth/login') }}"><i class="fa fa-sign-in"></i> Login</a></li>
-                            <li><a href="{{ url('/students/create') }}"><i class="fa fa-pencil-square-o"></i> Student Registration</a></li>
-                        </ul>
-                    </li>
-
-                @else
-
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-user"></i> {{ Auth::user()->name }} <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ url('/students')}}"><i class="fa fa-list-alt"></i> Students Portal</a></li>
-                            <li><a href="{{ url('/settings')}}"><i class="fa fa-cog"></i> Account Settings</a></li>
-                            <li><a href="{{ url('/auth/logout') }}"> <i class="fa fa-sign-out"></i> Logout</a></li>
-                        </ul>
-                    </li>
-                @endif
-
-            </ul>
-
         </div>
     </div>
 </nav>

@@ -21,8 +21,7 @@
                 </div><!--/span-->
 
                 <div class="col-xs-6 col-md-3 col-sm-4 sidebar-offcanvas" id="sidebar" role="navigation">
-                    <!--Commented out till a new Implementation is in place.-->
-                    {{--@include('main._testDatesSideBar')--}}
+                    @include('main._testDatesSideBar')
                 </div>
 
             </div><!--/row-->
@@ -39,7 +38,7 @@
 
 
         <!--Local Scripts-->
-        {{--<script type="text/javascript" src="/js/jquery-1.9.1.js"></script>--}}
+        {{--<script type="nm,/text/javascript" src="/js/jquery-1.9.1.js"></script>--}}
         {{--<script type="text/javascript" src="/js/bootstrap.min.js"></script>--}}
 
         <script type="text/javascript">

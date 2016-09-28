@@ -12,11 +12,11 @@ class AdminTestDatesViewComposer
 {
     public function compose( View $view){
 
-        $tDate = new TestDate();
-
-        $tDates = $tDate::where('testDay','>', Carbon::now() )->orderBy('testDay', 'asc')->get();
-
-        $view->with('testDates',$tDates);
+//        $tDate = new TestDate();
+//
+//        $tDates = $tDate::where('testDay','>', Carbon::now() )->orderBy('testDay', 'asc')->get();
+//
+//        $view->with('testDates',$tDates);
 
     }
 }

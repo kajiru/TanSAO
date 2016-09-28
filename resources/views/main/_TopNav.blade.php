@@ -53,40 +53,7 @@
 
                     </ul>
                 </li>
-
-
             </ul>
-
-            {{--<ul class="nav navbar-nav navbar-right">--}}
-                {{--@if (Auth::guest())--}}
-                    {{--<li class="dropdown">--}}
-                        {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-user"></i> Guest <span class="caret"></span></a>--}}
-                        {{--<ul class="dropdown-menu" role="menu">--}}
-
-                            {{--<li><a href="{{ url('/auth/login') }}"><i class="fa fa-sign-in"></i> Login</a></li>--}}
-                            {{--<li><a href="{{ url('/students/create') }}"><i class="fa fa-user-plus"></i> Student Registration</a></li>--}}
-                        {{--</ul>--}}
-                    {{--</li>--}}
-
-                {{--@else--}}
-
-                    {{--<li class="dropdown">--}}
-                        {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-user"></i> {{ Auth::user()->name }} <span class="caret"></span></a>--}}
-                        {{--<ul class="dropdown-menu" role="menu">--}}
-
-                            {{--@if(Auth::user()->status == 0)--}}
-                                {{--<li><a href="{{ url('/admin')}}"><i class="fa fa-bolt"></i> Administration</a></li>--}}
-                            {{--@endif--}}
-
-                            {{--<li><a href="{{ url('/students')}}"><i class="fa fa-graduation-cap"></i> Students Portal</a></li>--}}
-                            {{--<li><a href="{{ url('/settings')}}"><i class="fa fa-cog"></i></span> Account Settings</a></li>--}}
-                            {{--<li><a href="{{ url('/auth/logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>--}}
-                        {{--</ul>--}}
-                    {{--</li>--}}
-                {{--@endif--}}
-
-            {{--</ul>--}}
-
         </div>
     </div>
 </nav>

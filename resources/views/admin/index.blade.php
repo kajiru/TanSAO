@@ -19,19 +19,19 @@
 
     </div>
 
-    <div class="row">
-        <div class="col-md-6">
-            @include('admin._addSiteContent')
-        </div>
+    {{--<div class="row">--}}
+        {{--<div class="col-md-6">--}}
+            {{--@include('admin._addSiteContent')--}}
+        {{--</div>--}}
 
-        <div class="col-md-6">
-            @include('admin._siteDocuments')
-        </div>
-    </div>
+        {{--<div class="col-md-6">--}}
+            {{--@include('admin._siteDocuments')--}}
+        {{--</div>--}}
+    {{--</div>--}}
 
-    <div class="row">
-        @include('admin.gDrive.AWS')
-    </div>
+    {{--<div class="row">--}}
+        {{--@include('admin.gDrive.AWS')--}}
+    {{--</div>--}}
 
 
 @endsection

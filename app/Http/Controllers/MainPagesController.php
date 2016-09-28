@@ -36,7 +36,6 @@ class MainPagesController extends Controller
      * @return Contacts View
      */
     public function contacts(){
-
         return view('main.contacts');
     }
 

@@ -2,8 +2,6 @@
 <html lang="en">
     @include('main._layoutHead')
 
-
-
      <body>
 
         @include('main._TopNav')

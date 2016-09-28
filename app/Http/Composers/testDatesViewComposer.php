@@ -10,19 +10,21 @@ use Carbon\Carbon;
 class testDatesViewComposer
 {
 
-    public function compose( View $view){
+    public function compose(View $view){
 
-        $tDate = new TestDate();
+        $files = array();
+        $datesFile = storage_path()."/app/testDatesFiles.txt";
 
-        $aDates  =  $tDate::where('testName','ACT')->where('testDay','>',Carbon::now())->orderBy('testDay', 'asc')->take(2)->get();
-        $sDates  =  $tDate::where('testName','SAT')->where('testDay','>',Carbon::now())->orderBy('testDay', 'asc')->take(2)->get();
-        $s2Dates =  $tDate::where('testName','SAT 2')->where('testDay','>',Carbon::now())->orderBy('testDay', 'asc')->take(2)->get();
-        $tDates  =  $tDate::where('testName','TOEFL')->where('testDay','>',Carbon::now())->orderBy('testDay', 'asc')->take(3)->get();
+        $counter = 0;
+        $file_handle = fopen($datesFile, "r");
+        while (!feof($file_handle)) {
+            $line = fgets($file_handle);
+            $files = array_add($files, $counter, $line);
+            $counter++;
+        }
+        fclose($file_handle);
 
-        $view->with('aDates', $aDates)
-             ->with('sDates', $sDates)
-             ->with('s2Dates',$s2Dates)
-             ->with('tDates',$tDates);
+       $view->with('tDateFiles', $files);
 
     }
 }

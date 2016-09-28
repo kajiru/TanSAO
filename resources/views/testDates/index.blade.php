@@ -8,6 +8,14 @@
                 <h4 class="modal-title" id="myModalLabel">Add Test Date</h4>
             </div>
             <div class="modal-body">
+
+                    <p>
+                        Select a file with test dates to be uploaded.
+                        Include the earliest and latest test dates
+                        in the "From" and "To" fields respectively.
+                    </p>
+                <hr>
+
                 @include('testDates.create')
             </div>
             <div class="modal-footer">
@@ -21,30 +29,29 @@
     <table class="table table-hover table-bordered table-responsive">
         <thead>
             <tr>
-                <th>Test</th>
-                <th>Center</th>
-                <th>Testing Date</th>
-                <th>Reg. Deadline</th>
+                <th>File Name</th>
+                <th>From </th>
+                <th>To </th>
                 <th>Manage</th>
             </tr>
         </thead>
 
         <tbody>
 
-            @foreach($testDates as $tD)
-                <tr>
-                    <td> <a href="/tests/{{$tD->testName}}"> {{$tD->testName}}</a></td>
-                    <td>{{$tD->testCenter}}</td>
-                    <td>{{$tD->testDay}}</td>
-                    <td>{{$tD->registrationDeadline}}</td>
+            {{--@foreach($testDates as $tD)--}}
+                {{--<tr>--}}
+                    {{--<td> <a href="/tests/{{$tD->testName}}"> {{$tD->testName}}</a></td>--}}
+                    {{--<td>{{$tD->testCenter}}</td>--}}
+                    {{--<td>{{$tD->testDay}}</td>--}}
+                    {{--<td>{{$tD->registrationDeadline}}</td>--}}
 
-                    <td>
-                        {!! Form::open(["class"=>"form-inline", "method"=>"DELETE", "action" =>["TestDatesController@destroy", $tD->id]  ])!!}
-                        {!! Form::submit("Delete", ["class" => "btn btn-danger"]) !!}
-                        {!! Form::close() !!}
-                    </td>
-                </tr>
-            @endforeach
+                    {{--<td>--}}
+                        {{--{!! Form::open(["class"=>"form-inline", "method"=>"DELETE", "action" =>["TestDatesController@destroy", $tD->id]  ])!!}--}}
+                        {{--{!! Form::submit("Delete", ["class" => "btn btn-danger"]) !!}--}}
+                        {{--{!! Form::close() !!}--}}
+                    {{--</td>--}}
+                {{--</tr>--}}
+            {{--@endforeach--}}
 
         </tbody>
     </table>
